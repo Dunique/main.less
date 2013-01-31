@@ -1,0 +1,326 @@
+/*Kleuren*/
+@zwart: #000000;
+@wit: #ffffff;
+
+/* Definitions */
+
+@basefont: 13px;
+
+/*Imports*/
+
+
+/* ===== Typographic styles ====================================================
+   ========================================================================== */
+
+body {
+	font-family: sans-serif;
+	font-size: @basefont;
+	font-weight: 400;
+	line-height: 1.6em;
+	color: lighten(@zwart, 10%);
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: @zwart;
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+a:visited {color: darken(@zwart, 10%);}
+a:active, a:hover {color: lighten(@zwart, 10%);}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0 0 0.5em;
+	line-height: 1em;
+	color: lighten(@zwart,15%);
+	font-weight: normal;
+  
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1 {font-size: @basefont * 2;}
+h2 {font-size: @basefont * 1.5; color: @zwart; font-weight: 700;}
+h3 {font-size: @basefont * 1.3; color: @zwart; font-weight: 700;}
+h4 {font-size: @basefont * 1.1;}
+h5 {font-size: @basefont * 1; color: @zwart; font-weight: 700;}
+h6 {font-size: @basefont * 0.9; color: @zwart;}
+
+p,ul,ol,blockquote,table {
+	margin: 0 0 1.5em;
+  
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+strong {
+	color: @zwart;
+	font-weight: 700;
+}
+
+ul,ol {
+  padding-left: 2em;
+
+  li {margin: 4px 0;}
+}
+
+table {
+	width: 100%;
+
+	thead {
+		td,th {
+			background: @zwart;
+			color: @wit;
+			border: 1px solid darken(@zwart, 10%);
+			font-weight: bold;
+			
+			&:nth-child(even) {
+				background: lighten(@zwart,10%);
+			}
+		}
+	}
+
+	th,td {
+		padding: 6px 10px;
+		vertical-align: top;
+	}
+
+    th {
+		text-align: left;
+		white-space: nowrap;
+    }
+
+    td {
+		border: 1px solid darken(@wit, 10%);
+    }
+
+    tr:nth-child(odd) {
+		background: darken(@wit, 2%);
+    }
+
+    tfoot {
+		td,th {
+			background: darken(@wit, 10%);
+		}
+	}
+}
+
+blockquote {
+	font-family: times, serif;
+	font-style: italic;
+	font-size: @basefont * 1.3;
+	color: @zwart;
+	line-height: 1.6em;
+	padding: 20px;
+	border-top: 3px solid darken(@wit,50%);
+	border-bottom: 1px solid darken(@wit,25%);
+	
+	p,ul,ol,blockquote,table {
+	  &:last-child {
+	  	margin-bottom: 0;
+	  }
+	}
+}
+
+::-moz-selection {
+	background: @zwart;
+	color: @wit;
+	text-shadow: none;
+}
+
+::selection {
+	background: @zwart;
+	color: @wit;
+	text-shadow: none;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+textarea {
+	resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 1240px) {
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
